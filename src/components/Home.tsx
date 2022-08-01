@@ -53,7 +53,7 @@ const Home = () => {
 
             setLoading(true);
 
-            const response = await axios.get('https://l3gir636j5.execute-api.ap-northeast-1.amazonaws.com/production', {
+            const response = await axios.get('https://l3gir636j5.execute-api.ap-northeast-1.amazonaws.com/production/golf-courses', {
                 params: { date: addDays(date, 14), budget: budget, departure: departure, duration: duration }
             });
 
