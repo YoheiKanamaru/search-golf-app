@@ -38,7 +38,12 @@ def duration_minutes(departure, destination)
 end
 
 def put_item(course_id, durations) # DynamoDBへ保存します
-  return if SearchGolfApp.find(golf_course_id: course_id) # 既にDynamoDBに同じコースIDのレコードが存在した場合は新たに保存しない
+    begin
+        return if SearchGolfApp.find(golf_course_id: course_id) # 既にDynamoDBに同じコースIDのレコードが存在した場合は新たに保存しない
+      rescue => e
+        e
+    end
+    
   duration = SearchGolfApp.new
   duration.golf_course_id = course_id
   duration.duration1 = durations.fetch(1)
