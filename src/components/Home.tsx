@@ -77,6 +77,9 @@ const Home = () => {
 
      return (
        <div className="ui container" id="container">
+        <header>
+          K丸の練習サイト
+        </header>
          <div className="Search__Form">
            <form className="ui form segment" onSubmit={onFormSubmit}>
              <div className="field">
